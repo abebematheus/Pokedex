@@ -6,26 +6,34 @@
 }
 
 body {
-    background-color: rgba(255, 255, 255, 0.788);
+    background-color:#DC0A2D;
     height: 100vh;
     overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    display: flex;
 
 
 }
 
 #container{
-    width: 100%;
+    width: 90%;
     max-width: 588px;
-    border: red 1px solid;
+    height: 95%;
+    background-color: rgb(246, 234, 234);
     margin: auto;
     justify-content: center;
-    align-items: center;
     display: flex;
+    border-radius: 50px;
 
 }
 
-#dex{
+#logo1{
     width: 200px;
-    height: 100vh;
+    height: 75px;
     border: greenyellow 2px solid;
+    background-image: url(./assets/International_Pokémon_logo.svg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    
 }
