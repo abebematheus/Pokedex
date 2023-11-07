@@ -2,38 +2,106 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family:Verdana, Geneva, Tahoma, sans-serif
     
 }
 
 body {
     background-color:#DC0A2D;
     height: 100vh;
-    overflow: hidden;
-    justify-content: center;
-    align-items: center;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
 
 }
 
 #container{
     width: 90%;
-    max-width: 588px;
+    max-width: 548px;
     height: 95%;
     background-color: rgb(246, 234, 234);
     margin: auto;
-    justify-content: center;
-    display: flex;
-    border-radius: 50px;
+    border-radius: 50px;    
 
 }
 
-#logo1{
-    width: 200px;
-    height: 75px;
-    border: greenyellow 2px solid;
-    background-image: url(./assets/International_Pokémon_logo.svg.png);
-    background-size: cover;
-    background-repeat: no-repeat;
+#containerlist{
+    align-items: space-between;
+    display: flex;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    max-width: 90%;
+    justify-content: center;
     
 }
+
+#card{
+    width:120px;
+    height:120px ;
+    background-color: rgb(233, 233, 233);
+    border-radius: 20px;
+    box-shadow: 0 3px 15px;
+    margin: 10px;
+    padding: 5px;
+    justify-content: center;
+    display: relative;
+    position: relative;
+
+    
+}
+
+#pokemon{
+    width: 100px;
+    height: 100px;
+   
+
+}
+
+.name{
+    
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform:translateX(-50%);
+}
+
+.number{
+    position: absolute;
+    bottom:0;
+    left:5px;
+}
+
+.type{
+    position: absolute;
+    top:0;
+    left: 50%;
+    transform:translateX(-50%);
+}
+
+#name{
+    
+}
+
+#number{
+    padding: 3px;
+    color: rgb(75, 75, 74);
+    font-size: 12px;
+    
+}
+
+#type{
+    background-color: rgb(94, 205, 94);
+    box-shadow: 2px 2px 6px;
+    color: antiquewhite;
+    border-radius: 20px;
+    padding: 2px 5px;
+    font-weight: bold;
+
+
+    
+}
+
+
