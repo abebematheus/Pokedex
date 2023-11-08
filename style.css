@@ -1,9 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family:Verdana, Geneva, Tahoma, sans-serif
-    
+    box-sizing: border-box;    
 }
 
 body {
@@ -18,9 +16,8 @@ body {
 }
 
 #container{
-    width: 90%;
-    max-width: 548px;
-    height: 95%;
+    width: 80%;
+    height: 80%;
     background-color: rgb(246, 234, 234);
     margin: auto;
     border-radius: 50px;    
@@ -79,6 +76,14 @@ body {
     top:0;
     left: 50%;
     transform:translateX(-50%);
+    box-shadow: 2px 2px 6px;
+    color: rgb(143, 141, 139);
+    border-radius: 25px;
+    padding: 2px 8px;
+    font-weight: bold;
+    text-align: center;
+    justify-content: center;
+    display: flex;
 }
 
 #name{
@@ -92,16 +97,14 @@ body {
     
 }
 
-#type{
-    background-color: rgb(94, 205, 94);
-    box-shadow: 2px 2px 6px;
-    color: antiquewhite;
-    border-radius: 20px;
-    padding: 2px 5px;
-    font-weight: bold;
-
-
-    
+#type{ 
+    color: rgb(255, 255, 255);
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px;
 }
+
+#type::first-letter {
+    text-transform: uppercase;
+  }
 
 

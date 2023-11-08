@@ -1,20 +1,20 @@
 const containerlist = document.querySelector("#containerlist");
 const pokemonCount = 1100
 const colors = {
-    fire: '#FDDFDF',
-    grass: '#DEFDE0',
-    electric: '#FCF7DE',
-    water: '#DEF3FD',
-    ground: '#f4e7da',
-    rock: '#d5d5d4',
-    fairy: '#fceaff',
-    poison: '#98d7a5',
-    bug: '#f8d5a3',
-    dragon: '#97b3e6',
-    psychic: '#eaeda1',
-    flying: '#F5F5F5',
-    fighting: '#E6E0D4',
-    normal: '#F5F5F5'
+    fire: '#F57D31',
+    grass: '#74CB48',
+    electric: '#F9CF30',
+    water: '#6493EB',
+    ground: '#DEC16B',
+    rock: '#B69E31',
+    fairy: '#E69EAC',
+    poison: '#A43E9E',
+    bug: '#A7B723',
+    dragon: '#7037FF',
+    psychic: '#FB5584',
+    flying: '#A891EC',
+    fighting: '#C12239',
+    normal: '#AAA67F'
 }
 
 const mainTypes = Object.keys(colors);
@@ -40,18 +40,18 @@ const createPokemonCard = (poke) => {
     const name = poke.name[0].toUpperCase() + poke.name.slice(1)
     const id = poke.id.toString().padStart(3, '0')
 
-    const pokeTypes = poke.types.map(type => type.type.name)
+    const pokeTypes = poke.types.map(type => type.type.name) 
     const type = mainTypes.find(type => pokeTypes.indexOf(type) > -1)
     const color = colors[type]
 
-    card.style.backgroundColor = color
-
+    
+    
     const pokemonInnerHTML = `
     <div id="card1" class="card1">
     <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${poke.id}.png" alt="${name}" id="pokemon">
                  <div class="number"> <span id="number">#${id}</span> </div>
                  <div class="name"> <span id="nome">${name}</span> </div>
-                 <div class="type"> <span id="type">${type}</span> </div>
+                 <div class="type" style="background-color: ${color} "> <span id="type">${type}</span> </div>
     </div>
     
     `
@@ -60,6 +60,7 @@ const createPokemonCard = (poke) => {
     containerlist.appendChild(card)
 
 }
+
 
 fetchPokemons()
 
