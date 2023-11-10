@@ -12,18 +12,20 @@ body {
     align-items: center;
     justify-content: center;
 
-
 }
 
 #container{
-    width: 80%;
-    height: 80%;
+    width: 95%;
+    height: 85%;
     background-color: rgb(246, 234, 234);
     margin: auto;
     border-radius: 50px;    
     justify-content: center;
     align-items: center;
     display: flex;
+    background-image: url(./assets/svg/pokeball-small.svg);
+
+
 
 }
 
@@ -44,9 +46,9 @@ body {
 #card1{
     width:120px;
     height:120px ;
-    background-color: rgb(233, 233, 233);
+    background-color: rgb(255, 255, 255);
     border-radius: 20px;
-    box-shadow: 0 3px 15px;
+    box-shadow: 0 1px 8px;
     margin: 10px;
     padding: 5px;
     justify-content: center;
@@ -59,6 +61,9 @@ body {
 #pokemon{
     width: 100px;
     height: 100px;
+    z-index: 2;
+    position: absolute;
+    
    
 
 }
@@ -73,8 +78,14 @@ body {
 
 .number{
     position: absolute;
-    bottom:0;
-    left:5px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1;
+
+
+    
 }
 
 .type{
@@ -98,8 +109,14 @@ body {
 
 #number{
     padding: 3px;
-    color: rgb(75, 75, 74);
-    font-size: 12px;
+    color: rgba(228, 228, 228, 0.452);
+    font-size: 75px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    z-index: 1;
+
+    
+    
+
     
 }
 
