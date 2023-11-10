@@ -58,9 +58,13 @@ body {
     
 }
 
+.card1:hover {
+    cursor: pointer;
+}
+
 #pokemon{
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     z-index: 2;
     position: absolute;
     
@@ -74,6 +78,8 @@ body {
     bottom: 0;
     left: 50%;
     transform:translateX(-50%);
+    padding: 4px;
+
 }
 
 .number{
@@ -103,7 +109,11 @@ body {
     display: flex;
 }
 
-#name{
+#nome{
+    font-size: 15px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    color: rgb(44, 44, 44);
     
 }
 
