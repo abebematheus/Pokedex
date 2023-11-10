@@ -54,12 +54,17 @@ body {
     justify-content: center;
     display: relative;
     position: relative;
+    transition: transform 0.3s ease-in-out; /* Adiciona uma transição suave para a propriedade transform */
+
 
     
 }
 
 .card1:hover {
     cursor: pointer;
+    transform: scale(1.1); /* Aumenta o elemento em 10% ao passar o mouse sobre ele */
+
+    
 }
 
 #pokemon{
@@ -67,8 +72,12 @@ body {
     height: 120px;
     z-index: 2;
     position: absolute;
-    
-   
+    transition: transform 0.4s ease-in-out; /* Adiciona uma transição suave para a propriedade transform */
+
+}
+
+#pokemon:hover{
+    transform: scale(1.3); /* Aumenta o elemento em 10% ao passar o mouse sobre ele */
 
 }
 
