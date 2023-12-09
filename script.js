@@ -83,4 +83,15 @@ searchinput.addEventListener("input", (event) => {
     });
 });
 
+// Adicione esta parte para alterar a fonte dentro da barra de pesquisa
+const searchinputText = document.querySelector("#searchinput");
+
+// Altere 'Inter', sans-serif para a fonte desejada
+searchinputText.style.fontFamily = 'Inter, sans-serif';
+searchinputText.style.fontWeight = 'bold';
+searchinputText.style.textTransform = 'uppercase'; // Converte todas as letras para maiúsculas
+searchinputText.style.fontSize = '1.2em'; // Ajuste o tamanho do texto conforme necessário
+searchinputText.style.paddingLeft = '5px'; // Ajuste o valor conforme necessário
+
+
 fetchAllPokemons();
