@@ -62,6 +62,7 @@ const createPokemonCard = (poke) => {
     `;
 
     card.innerHTML = pokemonInnerHTML;
+    card.addEventListener('click', () => openModal(poke));
     containerlist.appendChild(card);
 }
 
@@ -91,7 +92,36 @@ searchinputText.style.fontFamily = 'Inter, sans-serif';
 searchinputText.style.fontWeight = 'bold';
 searchinputText.style.textTransform = 'uppercase'; // Converte todas as letras para maiúsculas
 searchinputText.style.fontSize = '1.2em'; // Ajuste o tamanho do texto conforme necessário
-searchinputText.style.paddingLeft = '5px'; // Ajuste o valor conforme necessário
+searchinput.style.paddingLeft = '5px'; // Ajuste o valor conforme necessário
+
+
+// MODAL ACTIONS
+function openModal(poke) {
+    const modal = document.getElementById('pokemonModal');
+    const modalImage = document.getElementById('modalImage');
+    const modalName = document.getElementById('modalName');
+    const modalId = document.getElementById('modalId');
+
+    modalImage.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${poke.id}.png`;
+    modalName.textContent = poke.name[0].toUpperCase() + poke.name.slice(1);
+    modalId.textContent = poke.id.toString().padStart(3, '0');
+
+    modal.style.display = 'block';
+}
+
+function closeModal() {
+    const modal = document.getElementById('pokemonModal');
+    modal.style.display = 'none';
+}
+
+const modal = document.getElementById('pokemonModal');
+
+window.addEventListener('click', (event) => {
+    if (event.target === modal) {
+        closeModal();
+    }
+});
+
 
 
 fetchAllPokemons();
