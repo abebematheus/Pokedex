@@ -1,5 +1,5 @@
 const containerlist = document.querySelector("#containerlist");
-const pokemonCount = 80
+const pokemonCount = 480
 const colors = {
     fire: '#F57D31',
     grass: '#74CB48',
@@ -23,48 +23,64 @@ const colors = {
 
 const mainTypes = Object.keys(colors);
 
-const fetchPokemons = async () => {
+const fetchAllPokemons = async () => {
+    const promises = [];
+
     for (let i = 1; i <= pokemonCount; i++) {
-        await getPokemons(i)
-    
+        const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
+        promises.push(fetch(url).then(response => response.json()));
     }
+
+    const pokemonsData = await Promise.all(promises);
+    createPokemonCards(pokemonsData);
 }
 
-const getPokemons = async (id) => {
-    const url = `https://pokeapi.co/api/v2/pokemon/${id}`
-    const resp = await fetch(url)
-    const data = await resp.json()
-    createPokemonCard(data)
+const createPokemonCards = (pokemonsData) => {
+    pokemonsData.forEach(poke => {
+        createPokemonCard(poke);
+    });
 }
 
 const createPokemonCard = (poke) => {
-    const card = document.createElement('div')
-    card.classList.add("card1")
+    const card = document.createElement('div');
+    card.classList.add("card1");
 
-    const name = poke.name[0].toUpperCase() + poke.name.slice(1)
-    const id = poke.id.toString().padStart(3, '0')
+    const name = poke.name[0].toUpperCase() + poke.name.slice(1);
+    const id = poke.id.toString().padStart(3, '0');
 
-    const pokeTypes = poke.types.map(type => type.type.name) 
-    const type = mainTypes.find(type => pokeTypes.indexOf(type) > -1)
-    const color = colors[type]
+    const pokeTypes = poke.types.map(type => type.type.name);
+    const type = mainTypes.find(type => pokeTypes.indexOf(type) > -1);
+    const color = colors[type];
 
-    
-    
     const pokemonInnerHTML = `
-    <div id="card1" class="card1">
-    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${poke.id}.png" alt="${name}" id="pokemon">
-                 <div class="number"> <span id="number">${id}</span> </div>
-                 <div class="name"> <span id="nome">${name}</span> </div>
-                 <div class="type" style="background-color: ${color} "> <span id="type">${type}</span> </div>
-    </div>
-    
-    `
-    card.innerHTML = pokemonInnerHTML
+        <div id="card1" class="card1">
+            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${poke.id}.png" alt="${name}" id="pokemon">
+            <div class="number"><span id="number">${id}</span></div>
+            <div class="name"><span id="nome">${name}</span></div>
+            <div class="type" style="background-color: ${color}"><span id="type">${type}</span></div>
+        </div>
+    `;
 
-    containerlist.appendChild(card)
-
+    card.innerHTML = pokemonInnerHTML;
+    containerlist.appendChild(card);
 }
 
+const searchinput = document.querySelector("#searchinput");
 
-fetchPokemons()
+searchinput.addEventListener("input", (event) => {
+    const searchTerm = event.target.value.toLowerCase();
+    const cards = document.querySelectorAll(".card1");
 
+    cards.forEach((card) => {
+        const name = card.querySelector("#nome").textContent.toLowerCase();
+        const number = card.querySelector("#number").textContent.toLowerCase();
+
+        if (name.includes(searchTerm) || number.includes(searchTerm)) {
+            card.style.display = "flex";
+        } else {
+            card.style.display = "none";
+        }
+    });
+});
+
+fetchAllPokemons();
