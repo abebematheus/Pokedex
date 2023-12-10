@@ -5,12 +5,25 @@
 }
 
 body {
-    background-color:#DC0A2D;
     height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: rgb(233, 231, 231);
+
+
+}
+
+#topbar{
+    width: 100%;
+    height: 12%;
+    background-color: rgb(194, 19, 19);
+    position: absolute;
+    top: 0;
+    z-index: 3;
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 30px 30px;
 
 }
 
@@ -23,7 +36,10 @@ body {
     display: flex;
     align-items: center;
     padding: 0 5%;
-    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    z-index: 4;
+
+    
+    
 
 
 }
@@ -38,6 +54,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 4;
+
 }
 
 #titlemenu{
@@ -45,6 +63,8 @@ body {
     font-family: 'Inter', sans-serif;
     font-weight: bolder;
     color: white;
+    z-index: 4;
+
 }
 
 #more {
@@ -56,25 +76,27 @@ body {
     color: aliceblue;
     border: #11181C 1px solid;
     margin-left: auto;
+    z-index: 4;
+
+    
     
 }
 
-#container{
-    width: 95%;
-    height: 85%;
-    background-color: rgb(246, 234, 234);
+#container {
+
+    width: 100%;
+    height: 100%;
+    background-color: rgb(233, 231, 231);
     margin: auto;
-    border-radius: 30px;    
     justify-content: center;
     align-items: center;
     display: flex;
     background-image: url(./assets/svg/pokeball-small.svg);
-
-
-
+    overflow: hidden;
 }
 
 #containerlist{
+    padding-top: 2%;
     height: 100%;
     width: 100%;
     align-items: space-between;
@@ -85,7 +107,7 @@ body {
     justify-content: center;
     overflow-y: auto;
     border-radius: 50px;    
-    
+
 
     
 }
@@ -95,7 +117,6 @@ body {
     height:120px ;
     background-color: rgb(255, 255, 255);
     border-radius: 20px;
-    box-shadow: 0 1px 8px;
     margin: 5px;
     padding: 5px;
     justify-content: center;
@@ -103,6 +124,10 @@ body {
     position: relative;
     transition: transform 0.3s ease-in-out; /* Adiciona uma transição suave para a propriedade transform */
     overflow: hidden;
+    box-shadow: 2px 4px 8px;
+
+    
+    
 
     
 }
@@ -120,6 +145,7 @@ body {
     z-index: 2;
     position: absolute;
     transition: transform 0.4s ease-in-out; /* Adiciona uma transição suave para a propriedade transform */
+    
 
 }
 
@@ -197,7 +223,7 @@ body {
 
 #number{
     padding: 3px;
-    color: rgba(247, 247, 247, 0.521);
+    color: rgb(253, 251, 251);
     font-size: 75px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-weight: bolder;
@@ -213,8 +239,11 @@ body {
 
 
 #searchbar {
+    padding: 0.5rem 0;
     position: relative;
     width: 90%;
+    z-index: 4;
+
 }
 
 #searchinput {
@@ -222,18 +251,10 @@ body {
     height: 2rem;
     border-radius: 25px;
     border: none;
+    z-index: 4;
+
 }
 
-#searchbutton {
-    position: absolute;
-    right: 0; /* Ajusta a posição do botão para a direita */
-    top: 0; /* Ajusta a posição do botão para o topo */
-    width: 2rem;
-    height: 2rem;
-    background-color: rgb(255, 255, 255);
-    border-radius: 100%;
-    border: none;
-}
 
 
 
