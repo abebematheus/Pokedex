@@ -107,6 +107,11 @@ function openModal(poke) {
     modalId.textContent = poke.id.toString().padStart(3, '0');
 
     modal.style.display = 'block';
+
+    // Adicione classes aos elementos do modal
+    modalImage.classList.add('modal-image');
+    modalName.classList.add('modal-name');
+    modalId.classList.add('modal-id');
 }
 
 function closeModal() {
@@ -121,7 +126,6 @@ window.addEventListener('click', (event) => {
         closeModal();
     }
 });
-
 
 
 fetchAllPokemons();
