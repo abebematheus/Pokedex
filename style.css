@@ -49,18 +49,24 @@ body {
 {
     width: 100%;
     display: flex;
-    align-items: center;
-    padding: 0 5%;
     z-index: 1001;
     background-color: rgb(194, 19, 19);
     border-radius: 0 0 30px 30px;
     box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.1);
-    position: relative;
+    flex-direction: column;
+    padding: 1rem;
+
+
+
+
+}
+
+#l1 {
+    margin: auto;
     display: flex;
-
-
-
-
+    width: 100%;
+    padding: 1%;
+    align-items: center;
 }
 
 #pokelogo {
@@ -70,9 +76,6 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center; /* Centraliza o SVG vertical e horizontalmente */
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
 }
 
@@ -83,18 +86,17 @@ body {
     color: white;
     z-index: 1001;
 
+
+
+
 }
 
 #more {
     width: 2rem; /* Ajuste o tamanho da div conforme necessário */
     height: 2rem; /* Ajuste o tamanho da div conforme necessário */
-    display: flex;
-    justify-content: center;
-    align-items: center;
     color: aliceblue;
     margin-left: auto;
     z-index: 4;
-    transition: transform 0.3s ease-in-out; /* Adiciona uma transição suave para a propriedade transform */ 
 }
 
 #more:hover {
@@ -116,12 +118,15 @@ body {
 ||||||||||||||||||||||||| 
 */
 
-#searchbar {
-    padding: 0.5rem 0;
+#l2 {
     width: 90%;
     z-index: 1001;
     margin: auto;
-   
+    /* display: none; */
+    
+
+    
+
 
 }
 
@@ -131,7 +136,6 @@ body {
     border-radius: 25px;
     border: none;
     z-index: 4;
-
 }
 
 
@@ -372,6 +376,20 @@ position: absolute;
 .close:hover {
     color: black;
 } 
+
+.fundo{
+    width: 90%;
+    height: 50%;
+    top: 40%;
+    position: absolute;
+    left: 50%; /* Ajuste a posição horizontal conforme necessário */
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    background-color: royalblue;
+
+    border-radius: 0 0 100% 100%;
+
+}
 
 
 

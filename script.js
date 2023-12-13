@@ -97,6 +97,8 @@ searchinput.style.paddingLeft = '5px'; // Ajuste o valor conforme necessário
 
 // MODAL ACTIONS
 function openModal(poke) {
+
+    
     const modal = document.getElementById('pokemonModal');
     const modalImage = document.getElementById('modalImage');
     const modalName = document.getElementById('modalName');
@@ -112,6 +114,8 @@ function openModal(poke) {
     modalImage.classList.add('modal-image');
     modalName.classList.add('modal-name');
     modalId.classList.add('modal-id');
+
+    
 }
 
 function closeModal() {
@@ -126,6 +130,8 @@ window.addEventListener('click', (event) => {
         closeModal();
     }
 });
+
+
 
 
 fetchAllPokemons();
