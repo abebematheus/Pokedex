@@ -64,6 +64,12 @@ const createPokemonCard = (poke) => {
     card.innerHTML = pokemonInnerHTML;
     card.addEventListener('click', () => openModal(poke));
     containerlist.appendChild(card);
+
+    poke.weight = poke.weight / 10; // Converta para decigramas
+    poke.height = poke.height / 10; // Converta para decímetros
+
+    card.addEventListener('click', () => openModal(poke));
+    containerlist.appendChild(card);
 }
 
 const searchinput = document.querySelector("#searchinput");
@@ -97,16 +103,33 @@ searchinput.style.paddingLeft = '5px'; // Ajuste o valor conforme necessário
 
 // MODAL ACTIONS
 function openModal(poke) {
-
-    
     const modal = document.getElementById('pokemonModal');
     const modalImage = document.getElementById('modalImage');
     const modalName = document.getElementById('modalName');
     const modalId = document.getElementById('modalId');
+    const modalType = document.getElementById('modalType'); // Adicione essa linha
+    const modalWeight = document.getElementById('modalWeight');
+    const modalHeight = document.getElementById('modalHeight');
+    const modalStats = document.getElementById('modalStats');
 
     modalImage.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${poke.id}.png`;
     modalName.textContent = poke.name[0].toUpperCase() + poke.name.slice(1);
     modalId.textContent = poke.id.toString().padStart(3, '0');
+    modalType.textContent = poke.types.map(type => type.type.name).join(', '); // Adicione essa linha
+    modalWeight.textContent = `Peso: ${poke.weight} kg`;
+    modalHeight.textContent = `Altura: ${poke.height} m`;
+
+    // Limpe as estatísticas existentes e adicione as novas estatísticas
+    modalStats.innerHTML = '';
+    poke.stats.forEach(stat => {
+        const statItem = document.createElement('li');
+        statItem.textContent = `${stat.stat.name}: ${stat.base_stat}`;
+        modalStats.appendChild(statItem);
+    });
+
+    // Adicione a classe ao elemento do modal para a cor de fundo
+    const modalTypeClass = poke.types[0].type.name; // Assumindo que há pelo menos um tipo
+    modal.classList.add(modalTypeClass);
 
     modal.style.display = 'block';
 
@@ -114,8 +137,6 @@ function openModal(poke) {
     modalImage.classList.add('modal-image');
     modalName.classList.add('modal-name');
     modalId.classList.add('modal-id');
-
-    
 }
 
 function closeModal() {

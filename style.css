@@ -353,23 +353,25 @@ position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #fff;
+    background-color: #ebe6e6;
     padding: 20px;
     text-align: center;
     border-radius: 25px;
     display: flex; /* Adiciona display flex para centralizar verticalmente */
     flex-direction: column; /* Define a direção da coluna para centralizar verticalmente */
+    justify-content: center;
+    align-items: center;
 }
 
 .close {
     color: #aaa;
     float: right;
-    font-size: 28px;
+    font-size: 40px;
     font-weight: bold;
     cursor: pointer;
     position: absolute;
-    top: 15%; /* Ajuste a posição vertical conforme necessário */
-    left: 95%; /* Ajuste a posição horizontal conforme necessário */
+    top: 20%; /* Ajuste a posição vertical conforme necessário */
+    left: 90%; /* Ajuste a posição horizontal conforme necessário */
     transform: translate(-50%, -50%); 
 }
 
@@ -378,16 +380,16 @@ position: absolute;
 } 
 
 .fundo{
-    width: 90%;
-    height: 50%;
-    top: 40%;
+    width: 100%;
+    height: 30%;
+    top: 30%;
     position: absolute;
     left: 50%; /* Ajuste a posição horizontal conforme necessário */
     transform: translate(-50%, -50%);
     z-index: -1;
-    background-color: rgb(235, 180, 176);
+    background-color: rgb(255, 255, 255);
 
-    border-radius: 0 0 100% 100%;
+    border-radius:  0 0 4rem 4rem;
 
 }
 
@@ -404,17 +406,88 @@ position: absolute;
 .modal-image {
     width: 200px;
     height: 200px;
-    margin: auto;
+    position: fixed;
+    top:15%;
+
 }
 
 .modal-name {
-    color: rgb(52, 52, 53);
-    font-size: 4rem;
+    color: rgb(67, 67, 68);
+    font-size: 3rem;
     font-family: 'Inter', sans-serif;
     font-weight: bolder;
     position: absolute;
-    top: 20%; /* Ajuste a posição vertical conforme necessário */
+    top: 50%; /* Ajuste a posição vertical conforme necessário */
     left: 50%; /* Ajuste a posição horizontal conforme necessário */
     transform: translate(-50%, -50%);
 
 }
+
+.modal-id {
+    color: rgb(67, 67, 68);
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: bolder;
+    top: 42%; /* Ajuste a posição vertical conforme necessário */
+    left: 50%; /* Ajuste a posição horizontal conforme necessário */
+    position: absolute;
+    transform: translate(-50%, -50%);
+
+
+}
+
+#boxinfo
+{
+    width: 95%;
+    height: 30%;
+    bottom: 5%;
+    position: absolute;
+    border-radius: 1.5rem;
+    max-width: 500px;
+    display: flex;
+    justify-content: space-around;
+    background-color: #aaa;
+
+}
+
+#modalWeight
+{
+    color: rgb(67, 67, 68);
+    font-size: 1.5rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: bolder;
+    
+
+}
+
+#modalHeight
+{
+    color: rgb(67, 67, 68);
+    font-size: 1.5rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: bolder;
+    
+}
+
+#modalStats
+{
+    color: aqua;
+    display: none;
+}
+
+
+
+
+
+/* Adicione outras regras de estilo conforme necessário */
+.dark .modal-content .type {
+    width: 100px;
+    height: 100px;
+    background-color:#269add  /* Substitua YOUR_COLOR pela cor desejada para o tipo Dark */
+}
+
+.electric .modal-content .type {
+    background-color: #3bdd26; /* Substitua YOUR_COLOR pela cor desejada para o tipo Electric */
+}
+
+/* Adicione mais regras de estilo para outros tipos */
